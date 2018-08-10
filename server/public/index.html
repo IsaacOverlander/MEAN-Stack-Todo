@@ -12,8 +12,13 @@
 </head>
 
 <body ng-app="taskApp">
-    <div id="container" ng-controller="TaskController">
+    <div id="container" ng-controller="TaskController as tc">
         <h1>Todo List</h1>
+        <form ng-submit="tc.addTask(tc.taskToAdd)">
+            <input type="text" ng-model="tc.taskToAdd.name" placeholder="Task"/>
+            <input type="text" ng-model="tc.taskToAdd.description" placeholder="Task Description"/>
+            <input type="submit" value="Submit"/>
+        </form>
     </div>
 </body>
 
