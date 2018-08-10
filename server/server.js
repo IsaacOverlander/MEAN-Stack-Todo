@@ -9,6 +9,13 @@ app.use(bodyParser.json());
 //globals
 const PORT = process.env.PORT || 5000;
 const mongoURI = 'mongodb://localhost:27017/tasks';
+const Schema = mongoose.Schema;
+const TaskSchema = new Schema ({
+    name: {type: String},
+    description: {type: String}
+})
+const Task = mongoose.model('tasksList', TaskSchema)
+
 //connecting and testing connection to MongoDB
 mongoose.connect(mongoURI, {useNewUrlParser: true});
 mongoose.connection.on('open', () => {
