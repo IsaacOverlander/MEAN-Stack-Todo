@@ -15,6 +15,7 @@
 
 - Checklist
     [x] Spin up server
+    [ ] Create Angular App and Controller
     [ ] Create a front end experience that allows a user to create tasks
         [ ] Create a Form
         [ ] Create a table to display tasks
