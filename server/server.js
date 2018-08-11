@@ -11,6 +11,8 @@ const TaskSchema = new Schema ({
     completed: {type: Boolean, default: false}
 });
 
+
+
 //uses
 app.use(express.static('server/public'));
 app.use(bodyParser.json());
@@ -34,7 +36,7 @@ app.listen(PORT, () => {
 });
 
 app.post('/tasks', (req, res) => {
-    console.log('/Post hit');
+    console.log('/POST hit');
     taskFromClient = req.body;
     const taskToAdd = new Task(taskFromClient);
     taskToAdd.save().then((() => {
@@ -45,3 +47,12 @@ app.post('/tasks', (req, res) => {
         res.sendStatus(500);
     }));
 });//end POST route\
+
+app.get('/tasks', (req,res) => {
+    console.log('/GET hit');
+    Task.find({}).then((foundTasks) => {
+        res.send(foundTasks);
+    }).catch((error) => {
+        console.log(error);
+    });
+})

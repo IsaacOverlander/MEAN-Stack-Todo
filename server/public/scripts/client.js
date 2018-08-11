@@ -26,5 +26,20 @@ taskApp.controller('TaskController', function($http) {
            
     }
 
+    function getTasks(){
+        $http({
+            method: 'GET',
+            url: '/tasks'
+        }).then(function(response){
+            console.log(response.data);
+            vm.tasksList = response.data;
+            console.log(vm.tasksList);
+            
+        }).catch(function(error){
+            alert('Unable to get tasks!');
+        })
+    }
+
+    getTasks();
 });
 

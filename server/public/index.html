@@ -31,13 +31,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="task in taskList">
+                <thead>
+                <tr ng-repeat="task in tc.tasksList">
                     <td>{{task.name}}</td>
                     <td>{{task.description}}</td>
                     <td>{{task.completed}}</td>
                     <td><button ng-click="tc.completeTask(task._id)">Complete</button></td>
                     <td><button ng-click="tc.deleteTask(task._id)">Delete</button></td>
                 </tr>
+                </thead>
             </tbody>
         </table>
     </div>
