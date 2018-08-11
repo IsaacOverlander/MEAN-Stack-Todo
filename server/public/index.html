@@ -15,10 +15,31 @@
     <div id="container" ng-controller="TaskController as tc">
         <h1>Todo List</h1>
         <form ng-submit="tc.addTask(tc.taskToAdd)">
-            <input type="text" ng-model="tc.taskToAdd.name" placeholder="Task"/>
-            <input type="text" ng-model="tc.taskToAdd.description" placeholder="Task Description"/>
-            <input type="submit" value="Submit"/>
+            <input type="text" ng-model="tc.taskToAdd.name" placeholder="Task" />
+            <input type="text" ng-model="tc.taskToAdd.description" placeholder="Task Description" />
+            <input type="submit" value="Submit" />
         </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Description</th>
+                    <th>Completed</th>
+                    <th>Complete</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="task in taskList">
+                    <td>{{task.name}}</td>
+                    <td>{{task.description}}</td>
+                    <td>{{task.completed}}</td>
+                    <td><button ng-click="tc.completeTask(task._id)">Complete</button></td>
+                    <td><button ng-click="tc.deleteTask(task._id)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 

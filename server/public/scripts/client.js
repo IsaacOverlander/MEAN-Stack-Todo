@@ -6,7 +6,8 @@ taskApp.controller('TaskController', function($http) {
     vm.tasksList = [];
     vm.taskToAdd = {
         name: 'Sweep',
-        description: 'Whole House'
+        description: 'Whole House',
+        completed: false
     }
 
     vm.addTask = function(taskIn){
@@ -24,6 +25,6 @@ taskApp.controller('TaskController', function($http) {
         });
            
     }
-    
+
 });
 

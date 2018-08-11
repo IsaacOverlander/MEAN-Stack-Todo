@@ -7,7 +7,8 @@ const Schema = mongoose.Schema;
 
 const TaskSchema = new Schema ({
     name: {type: String},
-    description: {type: String}
+    description: {type: String},
+    completed: {type: Boolean, default: false}
 });
 
 //uses
@@ -43,4 +44,4 @@ app.post('/tasks', (req, res) => {
         console.log('error', error);
         res.sendStatus(500);
     }));
-});//end POST route
+});//end POST route\
