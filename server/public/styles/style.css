@@ -19,5 +19,5 @@ body {
 
 .incomplete {
     background-color: lightgrey;
-
+    color: red;
 }

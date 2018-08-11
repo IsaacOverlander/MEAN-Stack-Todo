@@ -33,7 +33,7 @@
     CSS
     [x] Change background color of the page
     [x] Change the font family and size
-    [ ] Change text color or background color of tasks to show that they have not been completed
+    [x] Change text color or background color of tasks to show that they have not been completed
 
 - Next Steps
     [] ...
