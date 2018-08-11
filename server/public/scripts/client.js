@@ -27,6 +27,18 @@ taskApp.controller('TaskController', function($http) {
            
     }
 
+    vm.completeTask = function (taskId){
+        $http({
+            method: 'PUT',
+            url: '/tasks/updateTask/' + taskId
+        }).then(function (response){
+            getTasks();
+        }).catch(function(error){
+            alert('Unable to update Task!');
+            console.log('error', error);
+        })
+    }
+
     function getTasks(){
         $http({
             method: 'GET',

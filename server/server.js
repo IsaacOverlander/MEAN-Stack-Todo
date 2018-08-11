@@ -55,4 +55,18 @@ app.get('/tasks', (req,res) => {
     }).catch((error) => {
         console.log(error);
     });
+});
+
+app.put('/tasks/updateTask/:id', (req, res) => {
+    Task.findOne({_id: req.params.id}).then((foundTask) => {
+        console.log(foundTask);
+        
+        foundTask.completed = true;
+        foundTask.save().then(((response) => {
+            res.sendStatus(200);
+        })).catch((error) => {
+            res.sendStatus(500);
+            console.log('error', erro);
+        })
+    })
 })
