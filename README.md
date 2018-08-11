@@ -19,7 +19,7 @@
     [ ] Create a front end experience that allows a user to create tasks
         [x] Create a Form
         [ ] Create a table to display tasks
-        [ ] Create a POST request to add tasks to the database
+        [x] Create a POST request to add tasks to the database
         [ ] Create a Get request to display tasks
     [ ] Once created, store task in database
     [ ] When a task is completed refresh the front end

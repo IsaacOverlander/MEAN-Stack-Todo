@@ -4,15 +4,17 @@ taskApp.controller('TaskController', function($http) {
     console.log('Controller is ready');
     const vm = this;
     vm.tasksList = [];
-    cm.taskToAdd = {
-        name: tc.taskToAdd.name,
-        description: tc.taskToAdd.description
+    vm.taskToAdd = {
+        name: 'Sweep',
+        description: 'Whole House'
     }
 
     vm.addTask = function(taskIn){
+        console.log(taskIn);
+        
         $http({
             method: 'POST',
-            url: '/addTask',
+            url: '/tasks',
             data: taskIn
         }).then(function(response){
             console.log(response.data);
