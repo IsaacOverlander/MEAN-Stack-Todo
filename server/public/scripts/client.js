@@ -28,6 +28,11 @@ taskApp.controller('TaskController', function ($http) {
         }
     }
 
+    vm.orderByThis = function (type){
+        vm.orderType = type
+        console.log(vm.orderType);
+    }
+
     vm.completeTask = function (taskId) {
         $http({
             method: 'PUT',

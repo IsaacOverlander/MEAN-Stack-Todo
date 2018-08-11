@@ -21,22 +21,27 @@
             <input type="text" ng-model="tc.taskToAdd.name" placeholder="Task" />
             <input type="text" ng-model="tc.taskToAdd.description" placeholder="Task Description" />
             <input type="text" ng-model="tc.taskToAdd.category" placeholder="Task Category" />
-            <input type="submit" value="Submit" class="btn btn-primary"/>
+            <input type="submit" value="Submit" class="btn btn-primary" />
         </form>
+        <button ng-click="tc.orderByThis('task')" class="btn btn-info">Order by: Task</button>
+        <button ng-click="tc.orderByThis('description')" class="btn btn-info">Order by: Description</button>
+        <button ng-click="tc.orderByThis('-completed')" class="btn btn-info">Order by: Completed</button>
+        <button ng-click="tc.orderByThis('completed')" class="btn btn-info"> Order by: Incomplete</button>
+        <button ng-click="tc.orderByThis('category')" class="btn btn-info">Order by: Category</button>
 
         <table class="table">
             <thead>
                 <tr>
                     <th>Task</th>
                     <th>Description</th>
-                    <th>Completed</th>
+                    <th>Completion</th>
                     <th>Category</th>
                     <th>Complete</th>
                     <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="task in tc.tasksList" ng-class="{{task.completed}} ? 'done' : 'not_done'">
+                <tr ng-repeat="task in tc.tasksList | orderBy:tc.orderType" ng-class="{{task.completed}} ? 'done' : 'not_done'">
                     <td>{{task.name}}</td>
                     <td>{{task.description}}</td>
                     <td>{{task.completed}}</td>
