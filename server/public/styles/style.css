@@ -1,5 +1,6 @@
 h1 {
-    color: white;
+    color: black;
+    text-align: center;
 }
 
 th {
@@ -7,17 +8,21 @@ th {
 }
 
 body {
-    background-color: black;;
+    background-color: darkgray;;
     font-family: cursive;
-    font-size: 30px;
+    font-size: 25px;
 }
 
-.complete {
+.done {
     background-color: green;
     color: white;
 }
 
-.incomplete {
-    background-color: lightgrey;
+.not_done {
+    background-color: black;
     color: red;
+}
+
+.table-bordered {
+    text-align: center;
 }

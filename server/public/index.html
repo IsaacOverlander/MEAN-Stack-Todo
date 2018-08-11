@@ -5,22 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="styles/style.css">
     <script src="vendors/angular.min.js"></script>
     <script src="scripts/client.js"></script>
-    <link rel="stylesheet" href="styles/style.css">
     <title>Todo List</title>
 </head>
 
 <body ng-app="taskApp">
     <div id="container" ng-controller="TaskController as tc">
-        <h1>Todo List</h1>
-        <form ng-submit="tc.addTask(tc.taskToAdd)">
+        <div class="jumbotron">
+            <h1>Todo List</h1>
+        </div>
+        <form ng-submit="tc.addTask(tc.taskToAdd)" class="form-inline">
             <input type="text" ng-model="tc.taskToAdd.name" placeholder="Task" />
             <input type="text" ng-model="tc.taskToAdd.description" placeholder="Task Description" />
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" class="btn btn-primary"/>
         </form>
 
-        <table>
+        <table class="table">
             <thead>
                 <tr>
                     <th>Task</th>
@@ -31,12 +34,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="task in tc.tasksList" ng-class="{{task.completed}} ? 'complete' : 'incomplete'">
+                <tr ng-repeat="task in tc.tasksList" ng-class="{{task.completed}} ? 'done' : 'not_done'">
                     <td>{{task.name}}</td>
                     <td>{{task.description}}</td>
                     <td>{{task.completed}}</td>
-                    <td><button ng-click="tc.completeTask(task._id)">Complete</button></td>
-                    <td><button ng-click="tc.deleteTask(task._id)">Delete</button></td>
+                    <td>
+                        <button ng-click="tc.completeTask(task._id)" class="btn btn-success">Complete</button>
+                    </td>
+                    <td>
+                        <button ng-click="tc.deleteTask(task._id)" class="btn btn-danger">Delete</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
