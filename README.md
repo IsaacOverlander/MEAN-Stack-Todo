@@ -23,12 +23,12 @@
         [x] Create a Get request to display tasks
     [x] Once created, store task in database
     [x] When a task is completed refresh the front end
-    [ ] Add option to 'Complete' or 'Delete' to each task
-        [ ] Create a PUT request to complete tasks
-        [ ] Create a DELETE request to remove tasks
+    [x] Add option to 'Complete' or 'Delete' to each task
+        [x] Create a PUT request to complete tasks
+        [x] Create a DELETE request to remove tasks
     [ ] Add a visual change when a task is completed
     [x] Store whether the task has been completed or not in the Database
-    [ ] Deleting the task removes it from the database and the front end
+    [x] Deleting the task removes it from the database and the front end
 
     CSS
     [ ] Change background color of the page

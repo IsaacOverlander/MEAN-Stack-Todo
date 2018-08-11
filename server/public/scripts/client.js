@@ -18,7 +18,6 @@ taskApp.controller('TaskController', function($http) {
             url: '/tasks',
             data: taskIn
         }).then(function(response){
-            console.log(response.data);
             getTasks();
         }).catch(function(error){
             alert('Unable to add task!');
@@ -39,15 +38,24 @@ taskApp.controller('TaskController', function($http) {
         })
     }
 
+    vm.deleteTask = function(taskId){
+        $http({
+            method: 'DELETE',
+            url: '/tasks/deleteTask/' + taskId
+        }).then(function(response){
+            getTasks();
+        }).catch(function(error){
+            alert('Unable to delete task!');
+            console.log(error);
+        })
+    }
+
     function getTasks(){
         $http({
             method: 'GET',
             url: '/tasks'
         }).then(function(response){
-            console.log(response.data);
             vm.tasksList = response.data;
-            console.log(vm.tasksList);
-            
         }).catch(function(error){
             alert('Unable to get tasks!');
         })

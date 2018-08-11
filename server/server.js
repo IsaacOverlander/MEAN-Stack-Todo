@@ -58,9 +58,8 @@ app.get('/tasks', (req,res) => {
 });
 
 app.put('/tasks/updateTask/:id', (req, res) => {
+    console.log('/PUT hit');
     Task.findOne({_id: req.params.id}).then((foundTask) => {
-        console.log(foundTask);
-        
         foundTask.completed = true;
         foundTask.save().then(((response) => {
             res.sendStatus(200);
@@ -69,4 +68,14 @@ app.put('/tasks/updateTask/:id', (req, res) => {
             console.log('error', erro);
         })
     })
+});
+
+app.delete('/tasks/deleteTask/:id', (req, res) => {
+    console.log('/DELETE hit');
+    
+    Task.findByIdAndRemove(req.params.id).then( (response) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        res.sendStatus(500);
+    });
 })
