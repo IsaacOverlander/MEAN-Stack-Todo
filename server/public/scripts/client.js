@@ -3,6 +3,7 @@ const taskApp = angular.module('taskApp', []);
 taskApp.controller('TaskController', function ($http) {
     console.log('Controller is ready');
     const vm = this;
+    vm.orderType = 'completed';
     vm.tasksList = [];
     vm.taskToAdd = {
         name: 'Sweep',

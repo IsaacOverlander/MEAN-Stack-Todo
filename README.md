@@ -42,7 +42,7 @@
     - [x] Add front-end validation to the 'make-a-task' form.
     - [x] Add a category field for the task.
     - [x] Allow users to filter by task category.
-    - [] Adjust the logic so that completed tasks are brought to the bottom of the page, where the remaining tasks left to complete are brought to the top of the list.
+    - [x] Adjust the logic so that completed tasks are brought to the bottom of the page, where the remaining tasks left to complete are brought to the top of the list.
 
 - Author
     Isaac Overlander
