@@ -31,7 +31,7 @@
     [x] Deleting the task removes it from the database and the front end
 
     CSS
-    [ ] Change background color of the page
+    [x] Change background color of the page
     [ ] Change the font family and size
     [ ] Change text color or background color of tasks to show that they have not been completed
 

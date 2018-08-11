@@ -1,3 +1,21 @@
+h1 {
+    color: white;
+}
+
+th {
+    color: white;
+}
+
+body {
+    background-color: black;;
+}
+
 .complete {
     background-color: green;
+    color: white;
+}
+
+.incomplete {
+    background-color: lightgrey;
+
 }
