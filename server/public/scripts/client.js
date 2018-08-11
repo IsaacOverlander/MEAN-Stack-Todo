@@ -7,7 +7,8 @@ taskApp.controller('TaskController', function ($http) {
     vm.taskToAdd = {
         name: 'Sweep',
         description: 'Whole House',
-        completed: false
+        completed: false,
+        category: 'House Work'
     }
 
     vm.addTask = function (taskIn) {

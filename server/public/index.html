@@ -20,6 +20,7 @@
         <form ng-submit="tc.addTask(tc.taskToAdd)" class="form-inline">
             <input type="text" ng-model="tc.taskToAdd.name" placeholder="Task" />
             <input type="text" ng-model="tc.taskToAdd.description" placeholder="Task Description" />
+            <input type="text" ng-model="tc.taskToAdd.category" placeholder="Task Category" />
             <input type="submit" value="Submit" class="btn btn-primary"/>
         </form>
 
@@ -29,6 +30,7 @@
                     <th>Task</th>
                     <th>Description</th>
                     <th>Completed</th>
+                    <th>Category</th>
                     <th>Complete</th>
                     <th>Delete</th>
                 </tr>
@@ -38,6 +40,7 @@
                     <td>{{task.name}}</td>
                     <td>{{task.description}}</td>
                     <td>{{task.completed}}</td>
+                    <td>{{task.category}}</td>
                     <td>
                         <button ng-click="tc.completeTask(task._id)" class="btn btn-success">Complete</button>
                     </td>

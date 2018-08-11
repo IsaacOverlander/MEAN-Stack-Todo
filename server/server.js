@@ -8,7 +8,8 @@ const Schema = mongoose.Schema;
 const TaskSchema = new Schema ({
     name: {type: String},
     description: {type: String},
-    completed: {type: Boolean, default: false}
+    completed: {type: Boolean, default: false},
+    category: {type: String}
 });
 
 
