@@ -16,13 +16,13 @@
 - Checklist
     [x] Spin up server
     [x] Create Angular App and Controller
-    [ ] Create a front end experience that allows a user to create tasks
+    [x] Create a front end experience that allows a user to create tasks
         [x] Create a Form
         [x] Create a table to display tasks
         [x] Create a POST request to add tasks to the database
-        [ ] Create a Get request to display tasks
+        [x] Create a Get request to display tasks
     [x] Once created, store task in database
-    [ ] When a task is completed refresh the front end
+    [x] When a task is completed refresh the front end
     [ ] Add option to 'Complete' or 'Delete' to each task
         [ ] Create a PUT request to complete tasks
         [ ] Create a DELETE request to remove tasks

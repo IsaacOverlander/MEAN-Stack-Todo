@@ -19,6 +19,7 @@ taskApp.controller('TaskController', function($http) {
             data: taskIn
         }).then(function(response){
             console.log(response.data);
+            getTasks();
         }).catch(function(error){
             alert('Unable to add task!');
             console.log(error);
