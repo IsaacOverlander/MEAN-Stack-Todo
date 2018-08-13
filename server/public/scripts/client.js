@@ -19,26 +19,31 @@ taskApp.controller('TaskController', function ($http) {
             title: 'Add this Task?',
             icon: 'info',
             buttons: true,
-        }).then(function(willAdd){
+        }).then(function (willAdd) {
             //http POST request
-            $http({
-                method: 'POST',
-                url: '/tasks',
-                data: taskIn
-            }).then(function (response) {
-                //Refreshes the tasks
-                getTasks();
+            if (willAdd) {
+                $http({
+                    method: 'POST',
+                    url: '/tasks',
+                    data: taskIn
+                }).then(function (response) {
+                    //Refreshes the tasks
+                    getTasks();
+                }).catch(function (error) {
+                    //alert if there is an error
+                    swal('Unable to add task!');
+                    console.log(error);
+                });
+                //alert that the task was created
+                swal('The task was created');
+            }
+            else{
+                swal('the task was not created!')
+            }
             }).catch(function (error) {
-                //alert if there is an error
-                swal('Unable to add task!');
-                console.log(error);
-            });
-            //alert that the task was created
-            swal('The task was created');
-        }).catch(function(error){
-            ////alert if there is an error
-            swal('Unable to add task!')
-        })
+                ////alert if there is an error
+                swal('Unable to add task!')
+            })
     }
     //function for sorting the list of tasks
     vm.orderByThis = function (type) {
@@ -85,7 +90,7 @@ taskApp.controller('TaskController', function ($http) {
                 //alert that delete was successful
                 swal('Task successfully deleted!');
             }
-            else{
+            else {
                 //alert if there was an error
                 swal('The task was not deleted!');
             }

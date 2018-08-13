@@ -1,6 +1,6 @@
 - MEAN stack Todo List
 
-  A application to help people keep track of tasks that they need to complete.
+  An application to help people keep track of tasks that they need to complete.
 
 - Built with
     MongoDB
