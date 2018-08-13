@@ -1,6 +1,8 @@
+// requires
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+//globals
 const Schema = mongoose.Schema;
 const TaskSchema = new Schema ({
     name: {type: String},
@@ -18,6 +20,7 @@ mongoose.connection.on('open', () => {
 mongoose.connection.on('error', (error) => {
     console.log('Error connecting to Mongo', error);
 });
+//routes
 router.post('/', (req, res) => {
     console.log('/POST hit');
     taskFromClient = req.body;
@@ -41,7 +44,7 @@ router.get('/', (req,res) => {
 router.put('/updateTask/:id', (req, res) => {
     console.log('/PUT hit');
     Task.findOne({_id: req.params.id}).then((foundTask) => {
-        foundTask.completed = true;
+        foundTask.completed = !foundTask.completed;
         foundTask.save().then(((response) => {
             res.sendStatus(200);
         })).catch((error) => {
