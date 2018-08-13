@@ -1,19 +1,19 @@
 # MEAN stack Todo List
 
-  An application to help people keep track of tasks that they need to complete.
+An application to help people keep track of tasks that they need to complete.
 
 ## Built with
 
-    MongoDB
-    Express
-    Angular.js
-    Node.js
+MongoDB
+Express
+Angular.js
+Node.js
 
 ## Getting started
 
-    Download this project.
-    npm install
-    npm start
+Download this project.
+npm install
+npm start
 
 ### Checklist
 
@@ -40,14 +40,14 @@ CSS
 
 ### Next Steps
 
-    - [x] Implement Bootstrap to take the visuals of the page up a notch.
-    - [x] Create a validation popup for create/delete buttons
-    - [x] Move the inputs into a form and use ng-submit so that the user can hit enter to add a new task.
-    - [x] Add front-end validation to the 'make-a-task' form.
-    - [x] Add a category field for the task.
-    - [x] Allow users to filter by task category.
-    - [x] Adjust the logic so that completed tasks are brought to the bottom of the page, where the remaining tasks left to complete are brought to the top of the list.
+- [x] Implement Bootstrap to take the visuals of the page up a notch.
+- [x] Create a validation popup for create/delete buttons
+- [x] Move the inputs into a form and use ng-submit so that the user can hit enter to add a new task.
+- [x] Add front-end validation to the 'make-a-task' form.
+- [x] Add a category field for the task.
+- [x] Allow users to filter by task category.
+- [x] Adjust the logic so that completed tasks are brought to the bottom of the page, where the remaining tasks left to complete are brought to the top of the list.
 
 #### Author
 
-    Isaac Overlander
+Isaac Overlander
