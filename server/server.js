@@ -7,7 +7,6 @@ const databaseConnect = require('./modules/database-connection');
 //uses
 app.use(express.static('server/public'));
 app.use(bodyParser.json());
-app.use(databaseConnect);
 app.use('/tasks', taskRouter);
 //globals
 const PORT = process.env.PORT || 5000;
