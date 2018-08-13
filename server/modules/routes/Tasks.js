@@ -10,16 +10,7 @@ const TaskSchema = new Schema ({
     completed: {type: Boolean, default: false},
     category: {type: String}
 });
-const mongoURI = 'mongodb://localhost:27017/tasks';
 const Task = mongoose.model('tasksList', TaskSchema);
-//connecting and testing connection to MongoDB
-mongoose.connect(mongoURI, {useNewUrlParser: true});
-mongoose.connection.on('open', () => {
-    console.log('Connected to Mongo');
-});
-mongoose.connection.on('error', (error) => {
-    console.log('Error connecting to Mongo', error);
-});
 //routes
 router.post('/', (req, res) => {
     console.log('/POST hit');
