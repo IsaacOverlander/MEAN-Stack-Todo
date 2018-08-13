@@ -13,9 +13,11 @@ taskApp.controller('TaskController', function ($http) {
     }
 
     vm.addTask = function (taskIn) {
-        console.log(taskIn);
-        let confirmation = confirm('add Task?');
-        if (confirmation === true) {
+        swal({
+            title: 'Add this Task?',
+            icon: 'info',
+            buttons: true,
+        }).then(function(willAdd){
             $http({
                 method: 'POST',
                 url: '/tasks',
@@ -23,15 +25,17 @@ taskApp.controller('TaskController', function ($http) {
             }).then(function (response) {
                 getTasks();
             }).catch(function (error) {
-                alert('Unable to add task!');
+                swal('Unable to add task!');
                 console.log(error);
             });
-        }
+            swal('The task was created');
+        }).catch(function(error){
+            swal('Unable to add task')
+        })
     }
 
-    vm.orderByThis = function (type){
+    vm.orderByThis = function (type) {
         vm.orderType = type
-        console.log(vm.orderType);
     }
 
     vm.completeTask = function (taskId) {
@@ -41,24 +45,37 @@ taskApp.controller('TaskController', function ($http) {
         }).then(function (response) {
             getTasks();
         }).catch(function (error) {
-            alert('Unable to update Task!');
+            swal('Unable to update Task!');
             console.log('error', error);
         })
     }
 
     vm.deleteTask = function (taskId) {
-        let confirmation = confirm('delete task?');
-        if (confirmation === true) {
-            $http({
-                method: 'DELETE',
-                url: '/tasks/deleteTask/' + taskId
-            }).then(function (response) {
-                getTasks();
-            }).catch(function (error) {
-                alert('Unable to delete task!');
-                console.log(error);
-            })
-        }
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, You won't be able to get this task back!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then(function (willDelete) {
+            if (willDelete) {
+                $http({
+                    method: 'DELETE',
+                    url: '/tasks/deleteTask/' + taskId
+                }).then(function (response) {
+                    getTasks();
+                }).catch(function (error) {
+                    swal('Unable to delete task!');
+                    console.log(error);
+                });
+                swal('Task successfully deleted!');
+            }
+            else{
+                swal('The task was not deleted!');
+            }
+        }).catch(function (error) {
+            swal('Unable to delete task!');
+        })
     }
 
     function getTasks() {
@@ -68,10 +85,9 @@ taskApp.controller('TaskController', function ($http) {
         }).then(function (response) {
             vm.tasksList = response.data;
         }).catch(function (error) {
-            alert('Unable to get tasks!');
+            swal('Unable to get tasks!');
         })
     }
-
     getTasks();
 });
 

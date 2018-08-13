@@ -11,9 +11,6 @@ const TaskSchema = new Schema ({
     completed: {type: Boolean, default: false},
     category: {type: String}
 });
-
-
-
 //uses
 app.use(express.static('server/public'));
 app.use(bodyParser.json());
